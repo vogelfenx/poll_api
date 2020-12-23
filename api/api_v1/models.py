@@ -11,4 +11,16 @@ class Pool(models.Model):
     end_date = models.DateTimeField('Дата окончания')
 
     def __str__(self):
-        return ("%s" % (self.title, ))
+        return ("%s" % (self.title,))
+
+
+class Question(models.Model):
+    pass
+
+
+class Answer(models.Model):
+    pass
+
+
+class UserAnswer(models.Model):
+    pass

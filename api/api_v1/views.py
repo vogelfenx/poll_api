@@ -1,7 +1,10 @@
+from datetime import date
+
 from django.shortcuts import render
 from rest_framework import status, viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import SAFE_METHODS, BasePermission
+from rest_framework.response import Response
 
 from .models import Pool
 from .serializers import PoolSerializer
@@ -26,3 +29,19 @@ class PoolViewSet(viewsets.ModelViewSet):
     serializer_class = PoolSerializer
     authentication_classes = (BasicAuthentication, )
     permission_classes = (IsAdminOrReadOnly, )
+
+    def list(self, request):
+        """
+        Return all pools if the request.user is admin, otherwise return only active pools
+        """
+
+        today = date.today()
+
+        if request.user.is_staff:
+            queryset = Pool.objects.all()
+        else:
+            # gte = greater than or equal to.
+            queryset = Pool.objects.filter(end_date__gte=today)
+
+        serializer = PoolSerializer(queryset, many=True)
+        return Response(serializer.data)
