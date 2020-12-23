@@ -9,8 +9,7 @@ from .serializers import PoolSerializer
 
 class IsAdminOrReadOnly(BasePermission):
     """
-    Object-level permission to only allow edit it if user is admin.
-    Assumes the model instance has an `is_staff` attribute.
+    Object-level permission to only allow edit it if the user is admin.
     """
 
     def has_object_permission(self, request, view, obj):
