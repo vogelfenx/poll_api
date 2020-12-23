@@ -1,0 +1,13 @@
+# python stuff
+__pycache__
+
+# vscode stuff
+.vscode/
+
+# django stuff
+.venv/*
+!.venv/requirements.txt
+**/migrations/*
+!**/migrations/__init__.py
+activate-venv.bat
+*.bundle
