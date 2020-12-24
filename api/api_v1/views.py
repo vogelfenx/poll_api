@@ -6,8 +6,8 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import SAFE_METHODS, BasePermission
 from rest_framework.response import Response
 
-from .models import Pool
-from .serializers import PoolSerializer
+from .models import Poll
+from .serializers import PollSerializer
 
 
 class IsAdminOrReadOnly(BasePermission):
@@ -24,24 +24,24 @@ class IsAdminOrReadOnly(BasePermission):
         return request.user.is_staff
 
 
-class PoolViewSet(viewsets.ModelViewSet):
-    queryset = Pool.objects.all()
-    serializer_class = PoolSerializer
+class PollViewSet(viewsets.ModelViewSet):
+    queryset = Poll.objects.all()
+    serializer_class = PollSerializer
     authentication_classes = (BasicAuthentication, )
     permission_classes = (IsAdminOrReadOnly, )
 
     def list(self, request):
         """
-        Return all pools if the request.user is admin, otherwise return only active pools
+        Return all polls if the request.user is admin, otherwise return only active polls
         """
 
         today = date.today()
 
         if request.user.is_staff:
-            queryset = Pool.objects.all()
+            queryset = Poll.objects.all()
         else:
             # gte = greater than or equal to.
-            queryset = Pool.objects.filter(end_date__gte=today)
+            queryset = Poll.objects.filter(end_date__gte=today)
 
-        serializer = PoolSerializer(queryset, many=True)
+        serializer = PollSerializer(queryset, many=True)
         return Response(serializer.data)
