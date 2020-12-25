@@ -89,3 +89,14 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    |  question_id | the question the answer refers  |  
    
    
+**/api/vote/**  
+  *GET* Returns answers of all users
+  
+  *POST* Creates new user choice 
+     
+  **body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | answer_id  | answer selected by the user   |
+   |  answerOnTextQuestion | the user's answer on the question, not required  |  
+
