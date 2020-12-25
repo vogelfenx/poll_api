@@ -35,6 +35,9 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    | title  | title of the poll, max 100 charachters  |
    |  description | description of the poll, max 500 charachters  |
    |  end_date | end date of the poll, use YYYY-MM-DDThh:mm  |
+
+**api/poll/list_user_polls_detail/**  
+   *GET* Returns polls with selected choiches by the user  
    
 **api/question/**
    *GET* Returns questions.  
@@ -49,7 +52,7 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    |  question | question text  |  
    
 
-**api/question/<int:pk>**
+**api/question/<int:pk>**  
    *GET* Returns specific question by ID.  
    
    *PUT* Updates new question by ID.
@@ -84,3 +87,5 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    |--------|-------|
    | answer  | text of answer  |
    |  question_id | the question the answer refers  |  
+   
+   
