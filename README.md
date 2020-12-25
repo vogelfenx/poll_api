@@ -61,3 +61,15 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    |  question_type | Type of the question, possible int values: `1` for Text, `2` for one_choice, `3` for multi_choice question  |
    |  question | question text  |  
    
+**/api/answer/**
+
+  *GET* Lists all question's answers 
+  
+  *POST* Adds answers to the question  
+     
+  **required body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | answer  | text of answer  |
+   |  question_id | the question the answer refers  |  
+   
