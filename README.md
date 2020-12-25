@@ -73,3 +73,14 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    | answer  | text of answer  |
    |  question_id | the question the answer refers  |  
    
+**/api/answer/<int:pk>**
+
+  *GET* Returns specific answer 
+  
+  *PUT* Updates answer on the question  
+     
+  **required body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | answer  | text of answer  |
+   |  question_id | the question the answer refers  |  
