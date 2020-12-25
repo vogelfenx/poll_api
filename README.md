@@ -27,7 +27,7 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
 **/api/poll/<int:pk>/**  
   *GET* Returns specific poll by ID.  
   
-  *POST* Updates the existed poll by ID
+  *PUT* Updates the existed poll by ID
   
   **required body parameters**: 
    | Param  | desc  |
@@ -35,3 +35,16 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    | title  | title of the poll, max 100 charachters  |
    |  description | description of the poll, max 500 charachters  |
    |  end_date | end date of the poll, use YYYY-MM-DDThh:mm  |
+   
+**api/question/**
+   *GET* Returns questions.  
+   
+   *POST* Adds new question.
+   
+  **required body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | poll_id  | the poll the question refers  |
+   |  question_type | Type of the question, possible int values: `1` for Text, `2` for one_choice, `3` for multi_choice question  |
+   |  question | question text  |  
+   
