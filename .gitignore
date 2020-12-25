@@ -11,4 +11,3 @@ __pycache__
 !**/migrations/__init__.py
 activate-venv.bat
 *.bundle
-api/db.poll_api_v1
