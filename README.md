@@ -14,17 +14,24 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
 **/api/poll/**
 
   *GET* Lists all polls if the request.user is admin, otherwise returns only active polls  
-  *POST* Adds new poll if the user is authenticated & admin
+  
+  *POST* Adds new poll if the user is authenticated & admin   
      
   **required body parameters**: 
-
    | Param  | desc  |
    |--------|-------|
    | title  | title of the poll, max 100 charachters  |
    |  description | description of the poll, max 500 charachters  |
-   |  end_date | end date of the poll  |  
+   |  end_date | end date of the poll, use YYYY-MM-DDThh:mm  |  
      
-**/api/poll/<int:pk>/**
-  *GET* Returns specific poll by ID.
+**/api/poll/<int:pk>/**  
+  *GET* Returns specific poll by ID.  
+  
   *POST* Updates the existed poll by ID
   
+  **required body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | title  | title of the poll, max 100 charachters  |
+   |  description | description of the poll, max 500 charachters  |
+   |  end_date | end date of the poll, use YYYY-MM-DDThh:mm  |
