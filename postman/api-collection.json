@@ -222,13 +222,13 @@
 								},
 								{
 									"key": "end_date",
-									"value": "2020-12-26T14:15",
+									"value": "2020-12-26T12:00",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/poll/1/",
+							"raw": "http://127.0.0.1:8000/api/poll/13/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -240,12 +240,149 @@
 							"path": [
 								"api",
 								"poll",
-								"1",
+								"13",
 								""
 							],
 							"query": [
 								{
 									"key": "1",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete poll",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test1updated1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test1updated1",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2020-12-26T12:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/poll/13/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"poll",
+								"13",
+								""
+							],
+							"query": [
+								{
+									"key": "1",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_user_polls_detail",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/poll/list_user_polls_detail/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"poll",
+								"list_user_polls_detail",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
 									"value": "",
 									"disabled": true
 								}
@@ -388,6 +525,140 @@
 						"description": "add new question to poll"
 					},
 					"response": []
+				},
+				{
+					"name": "update question",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "13",
+									"type": "text"
+								},
+								{
+									"key": "question_type",
+									"value": "1",
+									"description": "TEXT type",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "What is your name?",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"8",
+								""
+							],
+							"query": [
+								{
+									"key": "1",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "add new question to poll"
+					},
+					"response": []
+				},
+				{
+					"name": "get questions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "question_type",
+									"value": "1",
+									"description": "TEXT type",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "question",
+									"value": "What is your name?",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								""
+							],
+							"query": [
+								{
+									"key": "1",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -427,13 +698,90 @@
 								},
 								{
 									"key": "question_id",
-									"value": "1",
+									"value": "3",
 									"description": "TEXT type",
 									"type": "text"
 								},
 								{
-									"key": "question",
-									"value": "What is your name?",
+									"key": "answerOnTextQuestion",
+									"value": "Answer3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/answer/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"answer",
+								""
+							],
+							"query": [
+								{
+									"key": "answer",
+									"value": "ответ1",
+									"disabled": true
+								},
+								{
+									"key": "question_id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new answer to question Copy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "answer",
+									"value": "ответ3",
+									"type": "text"
+								},
+								{
+									"key": "question_id",
+									"value": "3",
+									"description": "TEXT type",
+									"type": "text"
+								},
+								{
+									"key": "answerOnTextQuestion",
+									"value": "Answer3",
 									"type": "text",
 									"disabled": true
 								}
@@ -476,85 +824,6 @@
 			"name": "userAnswers",
 			"item": [
 				{
-					"name": "list_user_polls_detail",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {},
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "admin",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/poll/list_user_polls_detail/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"poll",
-								"list_user_polls_detail",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "user votes",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
@@ -582,12 +851,13 @@
 							"formdata": [
 								{
 									"key": "answer_id",
-									"value": "4",
-									"type": "text"
+									"value": "15",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "answerOnTextQuestion",
-									"value": "Textanswer",
+									"value": "",
 									"type": "text",
 									"disabled": true
 								},
