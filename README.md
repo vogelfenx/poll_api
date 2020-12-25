@@ -48,3 +48,16 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
    |  question_type | Type of the question, possible int values: `1` for Text, `2` for one_choice, `3` for multi_choice question  |
    |  question | question text  |  
    
+
+**api/question/<int:pk>**
+   *GET* Returns specific question by ID.  
+   
+   *PUT* Updates new question by ID.
+   
+  **required body parameters**: 
+   | Param  | desc  |
+   |--------|-------|
+   | poll_id  | the poll the question refers  |
+   |  question_type | Type of the question, possible int values: `1` for Text, `2` for one_choice, `3` for multi_choice question  |
+   |  question | question text  |  
+   
