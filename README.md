@@ -39,7 +39,7 @@ Use pre-defined postman collections (postman/api-collection.json) to test the ap
 **api/poll/list_user_polls_detail/**  
    *GET* Returns polls with selected choiches by the user  
    
-**api/question/**
+**api/question/**  
    *GET* Returns questions.  
    
    *POST* Adds new question.
